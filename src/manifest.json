@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Firefox Notes",
   "description": "Displays a sidebar that lets you take notes on web pages.",
-  "version": "2.2.0dev",
+  "version": "4.2.0dev",
   "default_locale": "en_US",
   "author": "Mozilla Test Pilot team",
   "applications": {
@@ -19,27 +19,19 @@
   "sidebar_action": {
     "default_icon": "icons/notes.svg",
     "default_title" : "Notes",
-    "default_panel": "sidebar/panel.html"
+    "default_panel": "sidebar/index.html"
   },
   "browser_action": {
     "browser_style": true,
     "default_icon": {
-      "16": "icons/notes.svg",
-      "32": "icons/notes.svg"
+      "16": "icons/notes-fill.svg",
+      "32": "icons/notes-fill.svg"
     },
     "default_area": "navbar",
-    "default_title": "Firefox Notes",
-    "theme_icons": [{
-      "light": "icons/notes-48-light.png",
-      "dark": "icons/notes-48-dark.png",
-      "size": 16
-    }, {
-      "light": "icons/notes-96-light.png",
-      "dark": "icons/notes-96-dark.png",
-      "size": 32
-    }]
+    "default_title": "Firefox Notes"
   },
   "permissions": [
+    "contextMenus",
     "storage",
     "identity",
     "https://ssl.google-analytics.com/collect"
@@ -51,6 +43,7 @@
       "vendor/kinto.js",
       "vendor/fxa-crypto-relier/fxa-crypto-relier.js",
       "vendor/testpilot-ga.js",
+      "utils.js",
       "fxa-utils.js",
       "sync.js",
       "background.js"

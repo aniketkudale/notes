@@ -3,19 +3,19 @@ const themeLegend = document.getElementById('themeTitle');
 const defaultThemeLabel = document.getElementById('default_label');
 const darkThemeLabel = document.getElementById('dark_label');
 
+/* eslint-disable no-unsanitized/property */
 themeLegend.innerHTML = browser.i18n.getMessage('themeLegend');
 defaultThemeLabel.innerHTML = browser.i18n.getMessage('defaultThemeTitle');
 darkThemeLabel.innerHTML = browser.i18n.getMessage('darkThemeTitle');
+/* eslint-enable no-unsanitized/property */
 
 const themeRadioBtn = document.getElementsByName('theme');
 
 function loadSavedData(data) {
   const theme = data.theme;
 
-  if (theme === 'default')
-    themeRadioBtn[0].checked = true;
-  else if (theme === 'dark')
-    themeRadioBtn[1].checked = true;
+  if (theme === 'default') themeRadioBtn[0].checked = true;
+  else if (theme === 'dark') themeRadioBtn[1].checked = true;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -27,15 +27,11 @@ function getTheme() {
   let theme = '';
 
   for (let i = 0; i < themeRadioBtn.length; i++) {
-    if (themeRadioBtn[i].checked)
-      theme = themeRadioBtn[i].value;
-    else
-      continue;
+    if (themeRadioBtn[i].checked) theme = themeRadioBtn[i].value;
+    else continue;
   }
 
-  const selectedTheme = {
-    theme: theme
-  };
+  const selectedTheme = { theme };
 
   return selectedTheme;
 }
