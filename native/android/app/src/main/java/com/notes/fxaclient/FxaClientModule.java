@@ -1,4 +1,4 @@
-package com.notes.fxaclient;
+package org.mozilla.testpilot.notes.fxaclient;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +11,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.notes.FxaLoginActivity;
+import org.mozilla.testpilot.notes.FxaLoginActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -102,6 +102,16 @@ public class FxaClientModule extends ReactContextBaseJavaModule implements Activ
             errorCallback.invoke();
             return;
         }
+
+        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+            @Override
+            public void uncaughtException(Thread thread, Throwable e) {
+                e.printStackTrace();
+                if (errorCallback != null) {
+                    errorCallback.invoke();
+                }
+            }
+        });
 
         final JSONObject loginDetails = new JSONObject();
         final JSONObject oauthResponse = new JSONObject();

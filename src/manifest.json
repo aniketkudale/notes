@@ -1,15 +1,14 @@
 {
   "manifest_version": 2,
-  "name": "Firefox Notes",
+  "name": "Notes by Firefox",
   "description": "Displays a sidebar that lets you take notes on web pages.",
-  "version": "4.3.0dev",
+  "version": "4.3.6",
   "default_locale": "en_US",
   "author": "Mozilla Test Pilot team",
   "applications": {
     "gecko": {
       "id": "notes@mozilla.com",
-      "strict_min_version": "57.0",
-      "update_url": "https://testpilot.firefox.com/files/notes@mozilla.com/updates.json"
+      "strict_min_version": "57.0"
     }
   },
   "icons": {
@@ -33,8 +32,7 @@
   "permissions": [
     "contextMenus",
     "storage",
-    "identity",
-    "https://ssl.google-analytics.com/collect"
+    "identity"
   ],
   "background": {
     "scripts": [
@@ -42,7 +40,6 @@
       "vendor/kinto-http.js",
       "vendor/kinto.js",
       "vendor/fxa-crypto-relier/fxa-crypto-relier.js",
-      "vendor/testpilot-ga.js",
       "utils.js",
       "fxa-utils.js",
       "sync.js",

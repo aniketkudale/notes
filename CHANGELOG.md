@@ -1,9 +1,40 @@
 # Changelog
 
-## 4.2.0dev
+## 4.3.6
 
-* TBA
+* Bump for AMO
 
+## 4.3.5
+
+* Fix for login
+* Updated dependencies
+
+## 4.3.4
+
+* Remove Google Analytics from WebExtension
+
+## 4.3.3
+
+* Version bump for auto update
+
+## 4.3.2
+
+* Update name
+
+## 4.3.1
+
+* Moving to AMO, part 2.
+## 4.3.0
+
+* Moving to AMO, part 1.
+
+## 4.2.1
+
+* Version bump for auto update
+
+## 4.1.2
+
+* Fix the text selection issues
 
 ## 4.1.1
 
